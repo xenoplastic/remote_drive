@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/set_hover.png</file>
+        <file>images/set_normal.png</file>
+        <file>images/set_press.png</file>
+        <file>images/close_hover.png</file>
+        <file>images/close_normal.png</file>
+        <file>images/close_press.png</file>
+        <file>images/open_video_disable.png</file>
+        <file>images/open_video_hover.png</file>
+        <file>images/open_video_normal.png</file>
+        <file>images/open_video_press.png</file>
+        <file>images/favicon.ico</file>
+        <file>images/border.png</file>
+        <file>images/close_white_hover.png</file>
+        <file>images/close_white_normal.png</file>
+        <file>images/map_yinli.png</file>
+    </qresource>
+</RCC>

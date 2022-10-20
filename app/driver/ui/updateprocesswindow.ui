@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UpdateProcessWindow</class>
+ <widget class="QDialog" name="UpdateProcessWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>150</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>150</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>150</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>更新</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <widget class="QWidget" name="promptPage">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>30</y>
+            <width>251</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+            <stylestrategy>PreferAntialias</stylestrategy>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string>有新的版本可以更新</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnUpdate">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>70</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:hover {
+	background-color: rgb(100, 180, 255);
+}
+QPushButton:pressed {
+background-color: #1E90FF;
+}
+QPushButton {
+	background-color: rgb(64, 169, 255);
+	color: white;                    /* 文字颜色 */
+	border-width: 1px;               /* 边框宽度 */
+	border-radius: 2px;              /* 边框圆角 */
+	font:bold 10pt &quot;Microsoft YaHei UI&quot;;
+}
+QPushButton:!enabled {
+background-color: rgb(150, 150, 150);
+}
+</string>
+          </property>
+          <property name="text">
+           <string>开始更新</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnUpdateLog">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>110</y>
+            <width>81</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:hover {
+background-color: rgb(0, 0, 0, 0);
+color: rgb(100, 180, 255);
+border-width: 1px;              						   /* 边框宽度 */
+border-radius: 2px;             						   /* 边框圆角 */
+font:10pt;
+text-decoration:underline;
+}
+QPushButton:pressed {
+background-color: rgb(0, 0, 0, 0);
+color: rgb(35, 100, 200);
+border-width: 1px;              						   /* 边框宽度 */
+border-radius: 2px;             						   /* 边框圆角 */
+font:10pt;
+text-decoration:underline;
+}
+QPushButton {
+background-color: rgb(0, 0, 0, 0);
+color: rgb(35, 169, 242);                   		   /* 文字颜色 */
+border-width: 1px;              						   /* 边框宽度 */
+border-radius: 2px;             						   /* 边框圆角 */
+font:10pt;
+text-decoration:underline;
+}
+QPushButton:!enabled {
+background-color: rgb(0, 0, 0, 0);
+color: rgb(35, 169, 242, 255);
+border-width: 1px;              						   /* 边框宽度 */
+border-radius: 2px;             						   /* 边框圆角 */
+font:10pt;
+text-decoration:underline;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>更新日志</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="updatePage">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <widget class="QProgressBar" name="progressBar">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>30</y>
+            <width>341</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="textDirection">
+           <enum>QProgressBar::TopToBottom</enum>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnStop">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>90</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:hover {
+	background-color: rgb(100, 180, 255);
+}
+QPushButton:pressed {
+background-color: #1E90FF;
+}
+QPushButton {
+	background-color: rgb(64, 169, 255);
+	color: white;                    /* 文字颜色 */
+	border-width: 1px;               /* 边框宽度 */
+	border-radius: 2px;              /* 边框圆角 */
+	font:bold 10pt &quot;Microsoft YaHei UI&quot;;
+}
+QPushButton:!enabled {
+background-color: rgb(150, 150, 150);
+}
+</string>
+          </property>
+          <property name="text">
+           <string>停止更新</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
