@@ -3,23 +3,34 @@
 #include <chrono>
 #include <string>
 
-using namespace std::chrono;
-using namespace std;
+#if defined(_MSC_VER) && defined(_WIN32)
+
+static inline struct tm *localtime_r(const time_t *ptime, struct tm *result)
+{
+	errno = localtime_s(result, ptime);
+	return result;
+}
+
+#else
+
+#include <time.h>
+
+#endif
 
 std::string GetCurrentSystemTime()
 {
-    auto t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    struct tm* ptm = localtime(&t);
-    char date[60] = { 0 };
-    sprintf(date, "%d-%02d-%02d %02d:%02d:%02d",
-        (int)ptm->tm_year + 1900, (int)ptm->tm_mon + 1, (int)ptm->tm_mday,
-        (int)ptm->tm_hour, (int)ptm->tm_min, (int)ptm->tm_sec);
-    return date;
+	std::chrono::system_clock::time_point tp = std::chrono::system_clock::now();
+	std::time_t time = std::chrono::system_clock::to_time_t(tp);
+	struct tm buf;
+	localtime_r(&time, &buf);
+	char date[32];
+	int cch = strftime(date, sizeof(date), "%F %T", &buf);
+	return std::string(date, cch);
 }
 
-int64_t GetMillTimestampSinceEpoch()
+std::int64_t GetMillTimestampSinceEpoch()
 {
-    std::chrono::system_clock::time_point curTime = std::chrono::system_clock::now();
-    std::chrono::system_clock::duration curTimeEpoch = curTime.time_since_epoch();
-    return duration_cast<milliseconds>(curTimeEpoch).count();
+	std::chrono::system_clock::time_point tp = std::chrono::system_clock::now();
+	std::chrono::system_clock::duration epoch = tp.time_since_epoch();
+	return std::chrono::duration_cast<std::chrono::milliseconds>(epoch).count();
 }
